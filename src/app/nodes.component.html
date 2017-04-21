@@ -1,0 +1,51 @@
+<h2>My Nodes</h2>
+<!-- <ul class="nodes">
+	<li *ngFor="let node of nodes" (click)="onSelect(node)"
+		[class.selected]="node === selectedNode"><span class="badge">{{node.chipID}}</span>
+		<span>{{node.ip}}</span></li>
+</ul>
+ -->
+<div style="overflow-x:auto;">
+
+<table>
+	<thead>
+		<th>chipID</th>
+		<th>ip</th>
+		<th>mac</th>
+		<th>sdk</th>
+		<th>flashID</th>
+		<th>flashSize</th>
+		<th>flashMode</th>
+		<th>flashSpeed</th>
+		<th>heap</th>
+		<th>bytesUsed</th>
+		<th>bytesRemain</th>
+		<th>totalMemory</th>		
+		<th>lastUpdate</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let node of nodes" (click)="onSelect(node)"
+			[class.selected]="node === selectedNode">
+			<td>{{node.chipID}}</td>
+			<td>{{node.ip}}</td>
+			<td>{{node.mac}}</td>
+			<td>{{node.sdk}}</td>
+			<td>{{node.flashID}}</td>
+			<td>{{node.flashSize}}</td>
+			<td>{{node.flashMode}}</td>
+			<td>{{node.flashSpeed}}</td>
+			<td>{{node.heap}}</td>
+			<td>{{node.bytesUsed}}</td>
+			<td>{{node.bytesRemain}}</td>		
+			<td>{{node.totalMemory}}</td>
+			<td>{{node.lastUpdate}}</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+<div *ngIf="selectedNode">
+	<h2>{{selectedNode.ip}} is my node</h2>
+	<button (click)="gotoDetail()">View Details</button>
+</div>

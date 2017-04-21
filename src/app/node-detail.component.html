@@ -1,0 +1,13 @@
+<div *ngIf="node">
+  <h2>{{node.ip}} details!</h2>
+  <div>
+    <label>chipID: </label>{{node.chipID}}
+    <label>mac: </label>{{node.mac}}
+  </div>
+  <div>
+    <label>ip: </label>
+    <input [(ngModel)]="node.ip" placeholder="ip" />
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
